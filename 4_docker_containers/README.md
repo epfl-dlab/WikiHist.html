@@ -37,7 +37,7 @@ docker build -t mediawiki_final .
 ## Testing the Docker image
 After building the image, the following steps explain how it can be tested with a sample from the XML dump.
 
-* Download a XML sample file from here and store the file in directory called `data`, also inside the `data` directory create:
+* Download a XML sample file from [here](https://ia601000.us.archive.org/0/items/enwiki-20190301-scripts-and-metadata_dlab/sample.xml) and store the file in directory called `data`, also inside the `data` directory create:
 - a directory named `results` (`data/results`)
 - a directory inside `results` named `sample.xml` (`data/results/sample.xml`)
 
