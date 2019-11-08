@@ -31,7 +31,7 @@ CREATE TABLE tmtable ( id int(10) unsigned not null,
                    valid_until_timestamp int ) CHARACTER SET binary;
 ```
 
-Because the templates and modules insertion file is around 80 GB, the [this guide] (https://dba.stackexchange.com/questions/83125/mysql-any-way-to-import-a-huge-32-gb-sql-dump-faster) can be used to speed up the insertion process. Also max_allowed_packet should be at least 100 MB - set up `max_allowed_packet=100M` in the `my.cnf` setup file.
+Because the templates and modules insertion file is around 80 GB, the [this guide](https://dba.stackexchange.com/questions/83125/mysql-any-way-to-import-a-huge-32-gb-sql-dump-faster) can be used to speed up the insertion process. Also max_allowed_packet should be at least 100 MB - set up `max_allowed_packet=100M` in the `my.cnf` setup file.
 
 With the following command the data is inserted:
 ```
