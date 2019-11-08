@@ -11,6 +11,8 @@ The scripts are divided into directories, and every directory is a step in the p
 * 5_server_scripts
 * 6_dealing_with_failed
 * 7_uploading_to_IA
-* 8_downlading_the_final_data
 
- The number in the directory name indicates the step number of the process.
+The number in the directory name indicates the step number of the process.
+
+## Downloading the dataset
+To download the dataset locally and work with it, check the scripts inside the `downlading_the_final_data` directory.
