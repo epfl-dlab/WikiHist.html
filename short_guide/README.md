@@ -18,7 +18,7 @@ cd mysql_data
 docker run --name=mysql1 --network my_network -v $(pwd)/my.cnf:/etc/my.cnf -v $(pwd)/mysql_datadir:/var/lib/mysql -d ic-registry.epfl.ch/mediawiki_docker/mysql-server
 ```
 
-4. Download a XML sample file from here and store the file in directory called data, also inside the data directory create:
+4. Download a XML sample file from [here](https://ia601000.us.archive.org/0/items/enwiki-20190301-scripts-and-metadata_dlab/sample.xml) and store the file in directory called data, also inside the data directory create:
 - a directory named results (`data/results`)
 - a directory inside results named `sample.xml` (`data/results/sample.xml`)
 
