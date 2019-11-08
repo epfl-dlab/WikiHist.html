@@ -34,6 +34,7 @@ The image can be build with the following command:
 docker build -t mediawiki_final .
 ```
 
+## Testing the Docker image
 After building the image, the following steps explain how it can be tested with a sample from the XML dump.
 
 * Download a XML sample file from here and store the file in directory called `data`, also inside the `data` directory create:
