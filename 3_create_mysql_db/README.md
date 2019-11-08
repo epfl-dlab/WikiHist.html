@@ -31,14 +31,13 @@ CREATE TABLE tmtable ( id int(10) unsigned not null,
                    valid_until_timestamp int ) CHARACTER SET binary;
 ```
 
-Because the templates and modules insertion file is around 80 GB, the following guide can be used to speed up the insertion process: https://dba.stackexchange.com/questions/83125/mysql-any-way-to-import-a-huge-32-gb-sql-dump-faster
-Also max_allowed_packet should be at least 100 MB - set up `max_allowed_packet=100M` in the `my.cnf` setup file.
+Because the templates and modules insertion file is around 80 GB, the [this guide] (https://dba.stackexchange.com/questions/83125/mysql-any-way-to-import-a-huge-32-gb-sql-dump-faster) can be used to speed up the insertion process. Also max_allowed_packet should be at least 100 MB - set up `max_allowed_packet=100M` in the `my.cnf` setup file.
 
 With the following command the data is inserted:
 ```
 pv final_insert.sql | docker exec -i mysql1 mysql -uroot -proot --init-command="SET SQL_LOG_BIN = 0;" mediawiki_tmd
 ```
-
+following
 After the insertion is completed, few other things need to be done to create the final dataset:
 * Creates the id field.
 ```
@@ -82,7 +81,7 @@ CREATE INDEX idx_1 on tmtable (title, ns, new_timestamp);
 CREATE INDEX id_ ON tmtable(id);
 ```
 
-Lastly, the MediaWiki back end databases are created. The `my_wiki_bck` database file can be downloaded from the following link, and its creation is explained in the 4th step.
+Lastly, the MediaWiki back end databases are created. The `my_wiki_bck` database file can be downloaded from [this link](https://archive.org/download/enwiki-20190301-scripts-and-metadata_dlab/mysql_database/), and its creation is explained in the 4th step.
 
 ```
 for value in {1..60}
