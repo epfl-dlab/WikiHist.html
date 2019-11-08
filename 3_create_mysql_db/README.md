@@ -61,9 +61,7 @@ HAVING COUNT(*)=(
 
 DELETE FROM tmtable WHERE text="";
 ```
-11180828 - in total
-10915 - with null text
-11169913 - without null
+11180828 - in total, 10915 - with null text, 11169913 - without null
 
 The following steps make sure that the oldest template or module has timestamp 1 (more details in the report).
 ```
