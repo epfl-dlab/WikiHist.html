@@ -7,15 +7,15 @@ Here, in the short guide, it is explained how to run the transformation from wik
 
 2. Pull the mysql and mediawiki images
 ```
-sudo docker pull ic-registry.epfl.ch/mediawiki_docker/mysql-server:latest
-sudo docker pull ic-registry.epfl.ch/mediawiki_docker/mediawiki_final:latest
+docker pull blagojce/mysql-server
+docker pull blagojce/mediawiki_final
 ```
 
 3. Initialize and start up the mysql database
 ```
-sudo docker network create my_network
+docker network create my_network
 cd mysql_data
-docker run --name=mysql1 --network my_network -v $(pwd)/my.cnf:/etc/my.cnf -v $(pwd)/mysql_datadir:/var/lib/mysql -d ic-registry.epfl.ch/mediawiki_docker/mysql-server
+docker run --name=mysql1 --network my_network -v $(pwd)/my.cnf:/etc/my.cnf -v $(pwd)/mysql_datadir:/var/lib/mysql -d blagojce/mysql-server
 ```
 
 4. Download a XML sample file from [here](https://ia601000.us.archive.org/0/items/enwiki-20190301-scripts-and-metadata_dlab/sample.xml) and store the file in directory called data, also inside the data directory create:
@@ -24,7 +24,7 @@ docker run --name=mysql1 --network my_network -v $(pwd)/my.cnf:/etc/my.cnf -v $(
 
 5. Run the mediawiki image
 ```
-docker run --name mediawiki --network my_network -v $(pwd)/data:/var/www/html/data -dit ic-registry.epfl.ch/mediawiki_docker/mediawiki_final
+docker run --name mediawiki --network my_network -v $(pwd)/data:/var/www/html/data -dit blagojce/mediawiki_final
 ```
 
 6. Run the main process
