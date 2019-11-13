@@ -103,7 +103,7 @@ search_terms = []
 with open(search_terms_file) as f:
     for line in f:
         if mode == "page_title":
-            search_terms.append(line)
+            search_terms.append(line.strip())
         else:
             search_terms.append(int(line))
 
