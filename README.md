@@ -15,7 +15,6 @@ The scripts are divided into directories, and every directory is a step in the p
 The number in the directory name indicates the step number of the process.
 
 ## Downloading the dataset
-To download the dataset locally and work with it, check the scripts inside the `downlading_the_final_data` directory.
 
 ### Dependencies
 The downloading scripts have the following dependency:
@@ -28,6 +27,8 @@ The downloading scripts have the following dependency:
 4. When asked about the search mode type `page_title` to search for the pages by title.
 5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
 6. The data will be saved in `downloaded_data` directory.
+
+For more information about downloading the dataset locally and work with it, check the read.me file and scripts in the `downlading_the_final_data` directory.
 
 
 
