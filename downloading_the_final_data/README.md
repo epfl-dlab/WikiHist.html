@@ -10,9 +10,9 @@ This directory contains scripts for downloading the dataset and metadata from th
 * Internet Archive Command-Line Interface, [installation guide]( https://archive.org/services/docs/api/internetarchive/installation.html)
 
 ### Running the `bulk_download_script.py`
-* Download the `bulk_download_script.py` script and the `titles_to_download.txt` example file.
-* Run the script with the command `python bulk_download_script.py`.
-* If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
-* When asked about the search mode type `page_title` to search for the pages by title.
-* Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
-* The data will be saved in `downloaded_data` directory.
+1. Download the `bulk_download_script.py` script and the `titles_to_download.txt` example file.
+2. Run the script with the command `python bulk_download_script.py`.
+3. If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
+4. When asked about the search mode type `page_title` to search for the pages by title.
+5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
+6. The data will be saved in `downloaded_data` directory.
