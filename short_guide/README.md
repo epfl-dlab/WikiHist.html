@@ -34,5 +34,5 @@ php main_parsing_process.php /var/www/html/data/sample.xml /var/www/html/data/re
 ```
 
 7. When the processing is done:
-- inside the `results/sample.xml` directory, there will be directory named `_SUCCES`
+- inside the `results/sample.xml` directory, there will be directory named `_SUCCESS`
 - inside the `results` directory, there will be file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
