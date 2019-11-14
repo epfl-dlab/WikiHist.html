@@ -18,7 +18,7 @@ The scripts are divided into directories, and every directory is a step in the p
 The number in the directory name indicates the step number of the process.
 
 ## Downloading the dataset
-The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are provoding. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downlading_the_final_data` directory. Here we describe how the `bulk_download_script.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
+The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downlading_the_final_data` directory. Here we describe how the `bulk_download_script.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
 
 ### Dependencies
 The downloading scripts have the following dependency:
@@ -33,12 +33,12 @@ The downloading scripts have the following dependency:
 6. The data will be saved in `downloaded_data` directory.
 
 
-## Example usecase: extracting links
-Here goes a short explanation on how to run the GO sript for extracting the links.
+## Example use case: extracting links
+Here goes a short explanation on how to run the GO script for extracting the links.
 
 
 ## Quick run of the pipeline
-The steps from 1 to 7 explain all the details of the process, from downloading the dump files, until uploading the data on Internet Archive, and it is useful for recreating the whole process.
+The steps from 1 to 7 explain all the details of the process, from downloading the dump files, to uploading the data on Internet Archive, and it is useful for recreating the whole process.
 Here, we show how to use the `quick_run.sh` script which automatically sets up and downloads everything that is needed to run the whole process on a sample XML file containing pages in Wikitext to obtain the pages in HTML format. Note that the script needs 101 GB of free hard drive space, because it downloads the MySQL database which is 11 GB compressed, then decompresses it to a 100 GB.
 
 ### Dependencies
@@ -53,7 +53,7 @@ bash quick_run.sh
 ```
 When the processing is done:
 - there will be a directory `data/results/sample.xml/_SUCCESS` indicating the successful finish of the processing 
-- inside the `data/results` directory, there will be file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
+- inside the `data/results` directory, there will be a file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
 - there will be a directory `data/results/sample.xml` containing the resulting json files
 
 
