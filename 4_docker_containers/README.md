@@ -25,7 +25,7 @@ After the first step, everything is ready for the final Docker image to be build
 - `Templates_modules_database_calls.php` - here is defined the logic for retrieving the templates and modules (detailed information in the report)
 - `main_parsing_process.php` and `child_parsing_process.php` - these scripts read a XML file, call the parser function on every page in the XML file and save the HTML output (detailed information in the report)
 
-(The edited parts of original MediaWiki scripts are marked with the line `This is the edited part!`)
+(The edited parts of original MediaWiki scripts are marked with the comment line `This is the edited part!`)
 
 The entry point is the `main_parsing_process.php` script.
 
