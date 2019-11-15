@@ -22,7 +22,7 @@ The number in the directory name indicates the step number of the project.
 
 
 ## Downloading the dataset
-The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downlading_the_final_data` directory. Here we describe how the `bulk_download_script.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
+The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downloading_the_final_data_and_metadata` directory. Here we describe how the `bulk_download_script.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
 
 ### Dependencies
 The downloading scripts have the following dependency:
