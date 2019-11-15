@@ -62,7 +62,7 @@ Each of the JSON files is a newline-delimited JSON file which stores every eleme
 * redirect\_title - If the page of this revision is redirect, this is the title where it redirects to.
 * html - The revision in HTML format.
 
-# Supplementary data formats
+# Supplementary data format
 ## Page creation timestamp
 Because of technical reasons, all the links in the HTML pages, are rendered as red links. In order to be able to resolve which like was red or blue at the time of the creation of the revision, we provide a JSON file containing the information when a given page was created. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the followoing:
 ```
