@@ -38,7 +38,7 @@ python copy_script.py unzip big 5
 
 When the files are successfully uncompressed, we can just start processing them with the `run_script.sh` in run mode:
 ```
- ash run_script.sh
+bash run_script.sh
 ```
 
 After some time, when some of the files are done processing, we can use the `upload_locally.py` script to transfer the results from the server to the NFS before uploading it to the Internet Archive and also to remove from the server the results after they are transferred and the data copied with the `copy_script.py`.

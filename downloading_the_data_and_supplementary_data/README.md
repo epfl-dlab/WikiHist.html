@@ -5,6 +5,18 @@ The resulting dataset, along with Wikipedia's full history dump that we processe
 * `bulk_download_data.py` - this script is used to download pages in bulk, by specifying the page titles, or page ids in a file instead of typing them manually.
 * `download_supplementary_data.py` - this script is used for downloading the supplementary datasets from IA.
 
+### Dependencies
+The downloading scripts have the following dependency:
+* Internet Archive Command-Line Interface, [installation guide]( https://archive.org/services/docs/api/internetarchive/installation.html)
+
+### Running the `bulk_download_data.py`
+1. Download the `bulk_download_data.py` script and the `titles_to_download.txt` example file.
+2. Run the script with the command `python bulk_download_data.py`.
+3. If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
+4. When asked about the search mode type `page_title` to search for the pages by title.
+5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
+6. The data will be saved in `downloaded_data` directory.
+
 
 # Data format
 The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
@@ -26,7 +38,7 @@ The final dataset contains more than 580 million of revision pages from more tha
     │   └── 1100000.json.gz
     └── ...
 
-Each of the JSON files is a newline-delimited JSON file which stores every element, in our case each HTML article revision with its metadata, as a new line. The format of the JSON lines is the followoing:
+Each of the JSON files is a newline-delimited JSON file which stores every element, in our case each HTML article revision with its metadata, as a new line. The format of the JSON lines is the following:
 
 ```
 {
@@ -65,7 +77,7 @@ Each of the JSON files is a newline-delimited JSON file which stores every eleme
 # Supplementary data format
 In addition to the dataset, we provide two more supplementary datasets:
 ## Page creation timestamp
-Because of technical reasons, all the links in the HTML pages, are rendered as red links. In order to be able to resolve which like was red or blue at the time of the creation of the revision, we provide a JSON file containing the information when a given page was created. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the followoing:
+Because of technical reasons, all the links in the HTML pages, are rendered as red links. In order to be able to resolve which like was red or blue at the time of the creation of the revision, we provide a JSON file containing the information when a given page was created. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the following:
 ```
 {
     "page_id":"x",
@@ -80,7 +92,7 @@ Because of technical reasons, all the links in the HTML pages, are rendered as r
 This information is extracted from the first revision of every page in the full history dump. It is important to note that this the best approximation we can get to resolve if a link was red or blue. This is because for example if some page was present in 2010, then the links in other pages that linked to it were blue links, but if this page was later deleted from Wikipedia, then the page will be missing in this JSON, because the page is also missing in the full history dump.
 
 ## Resolving redirects through time
-Also, as a supplementary dataset, we provide a JSON file containing all the redirects in the full dump history, and how they changed over time. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the followoing:
+Also, as a supplementary dataset, we provide a JSON file containing all the redirects in the full dump history, and how they changed over time. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the following:
 ```
 {
     "title":"x"
@@ -96,4 +108,4 @@ Also, as a supplementary dataset, we provide a JSON file containing all the redi
 * ns - This is the namespace of the revision.
 * page\_id - This is the id of the redirect page.
 * revision_id - This is the id of the revision.
-* redirect - This is the title where the redirect points to (destination of the redirect) in format (title, section).
+* redirect - This is the title where the redirect points to (destination of the redirect) in format \["title", "section"\].
