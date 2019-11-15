@@ -1,9 +1,10 @@
 # Downloading the data
 The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. This directory contains scripts for downloading the dataset and metadata from the dataset locally.
 
-* `download_script.py` - this is an interactive script for downloading the data from Internet Archive, in order to work it needs a metadata files which are also automatically fetched from IA by the script.
-* `bulk_download_script.py` - this script is used to download pages in bulk, by specifying the page titles, or page ids in a file instead of typing them manually.
-* `created_timestamp_and_redirects.py` - this script is an example of how to use the additional metadata that we provided on Internet Archive: `page_id_to_redirect_title.pickle` a directory that can be used to resolve the redirects and `page_id_to_timestamp.pickle` a directory that contains the timestamp when a page was created, it can be used to resolve the red links.
+* `download_data.py` - this is an interactive script for downloading the data from Internet Archive, in order to work it needs a metadata files which are also automatically fetched from IA by the script.
+* `bulk_download_data.py` - this script is used to download pages in bulk, by specifying the page titles, or page ids in a file instead of typing them manually.
+* `download_supplementary_data.py` - this script is used for downloading the supplementary datasets from IA.
+
 
 # Data format
 The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
@@ -61,7 +62,7 @@ Each of the JSON files is a newline-delimited JSON file which stores every eleme
 * redirect\_title - If the page of this revision is redirect, this is the title where it redirects to.
 * html - The revision in HTML format.
 
-# Metadata format
+# Supplementary data formats
 ## Page creation timestamp
 Because of technical reasons, all the links in the HTML pages, are rendered as red links. In order to be able to resolve which like was red or blue at the time of the creation of the revision, we provide a JSON file containing the information when a given page was created. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the followoing:
 ```
