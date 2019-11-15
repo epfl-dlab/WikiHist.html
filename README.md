@@ -2,10 +2,13 @@
 
 This is a repo containing all code and steps taken to download, setup and convert the whole English Wikipedia history from Wikitext to HTML format.
 
+
 ## Abstract
 Abstract goes here.
 
-The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc…
+
+## Github repository structure
+The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a read me file which gives the details about every step.
 
 * 1_downloading_wiki_dump
 * 2_extracting_templates
@@ -15,7 +18,8 @@ The scripts are divided into directories, and every directory is a step in the p
 * 6_dealing_with_failed
 * 7_uploading_to_IA
 
-The number in the directory name indicates the step number of the process.
+The number in the directory name indicates the step number of the project.
+
 
 ## Downloading the dataset
 The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downlading_the_final_data` directory. Here we describe how the `bulk_download_script.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
