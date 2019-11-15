@@ -108,4 +108,4 @@ Also, as a supplementary dataset, we provide a JSON file containing all the redi
 * ns - This is the namespace of the revision.
 * page\_id - This is the id of the redirect page.
 * revision_id - This is the id of the revision.
-* redirect - This is the title where the redirect points to (destination of the redirect) in format (title, section).
+* redirect - This is the title where the redirect points to (destination of the redirect) in format \["title", "section"\].
