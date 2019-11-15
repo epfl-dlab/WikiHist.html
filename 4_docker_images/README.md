@@ -34,18 +34,20 @@ docker build -t mediawiki_final .
 ```
 
 ## Testing the Docker image
-After building the image, the following steps explain how it can be tested with a sample from the XML dump.
+After building the image, the following steps explain how it can be tested with a sample from the XML dump. This test assumes that all the prevous steps have been done successfully, for test of the whole process without following all the steps please refer to the main [read me](https://github.com/epfl-dlab/enwiki_history_to_html) and this [script](https://github.com/epfl-dlab/enwiki_history_to_html/blob/master/quick_run.sh).
 
-* Download an XML sample file from [here](https://ia601000.us.archive.org/0/items/enwiki-20190301-scripts-and-metadata_dlab/sample.xml) and store the file in a directory called `data`, also inside the `data` directory create:
-- a directory named `results` (`data/results`)
-- a directory inside `results` named `sample.xml` (`data/results/sample.xml`)
 
-* Run the MediaWiki image
+
+1. Download an XML sample file from [here](https://ia601000.us.archive.org/0/items/enwiki-20190301-scripts-and-metadata_dlab/sample.xml) and store the file in a directory called `data`, also inside the `data` directory create:
+* a directory named `results` (`data/results`)
+* a directory inside `results` named `sample.xml` (`data/results/sample.xml`)
+
+2. Run the MediaWiki image
 ```
 docker run --name mediawiki --network my_network -v $(pwd)/data:/var/www/html/data -dit ic-registry.epfl.ch/mediawiki_docker/mediawiki_final
 ```
 
-* Run the main process
+3. Run the main process
 ```
 docker exec -it mediawiki /bin/bash
 ```
@@ -54,6 +56,6 @@ docker exec -it mediawiki /bin/bash
 php main_parsing_process.php /var/www/html/data/sample.xml /var/www/html/data/results/sample.xml/ 1
 ```
 
-* When the processing is done:
-- inside the `results/sample.xml` directory, there will be a directory named `_SUCCESS`
-- inside the `results` directory, there will be a file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
+4. When the processing is done:
+* inside the `results/sample.xml` directory, there will be a directory named `_SUCCESS`
+* inside the `results` directory, there will be a file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
