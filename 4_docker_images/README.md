@@ -34,7 +34,7 @@ docker build -t mediawiki_final .
 ```
 
 ## Testing the Docker image
-After building the image, the following steps explain how it can be tested with a sample from the XML dump. This test assumes that all the prevous steps have been done successfully, for test of the whole process without following all the steps please refer to the main [read me](https://github.com/epfl-dlab/enwiki_history_to_html) and this [script](https://github.com/epfl-dlab/enwiki_history_to_html/blob/master/quick_run.sh).
+After building the image, the following steps explain how it can be tested with a sample from the XML dump. This test assumes that all the prevous steps have been done successfully, for test of the whole process without following all the steps please refer to the [quick run section](https://github.com/epfl-dlab/enwiki_history_to_html#quick-run-of-the-pipeline) in the main read me and this [script](https://github.com/epfl-dlab/enwiki_history_to_html/blob/master/quick_run.sh).
 
 
 
