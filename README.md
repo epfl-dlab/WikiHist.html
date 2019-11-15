@@ -8,7 +8,7 @@ Abstract goes here.
 
 
 ## Github repository structure
-The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a read me file which gives the details about that step.
+The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a readme file which gives the details about that step.
 
 * 1_downloading_wiki_dump
 * 2_extracting_templates
@@ -38,7 +38,7 @@ The downloading scripts have the following dependency:
 
 
 ## Example use case: extracting links
-Here goes a short explanation on how to run the GO script for extracting the links, find the redlinks, and resolve redirects thoguh time.
+Here goes a short explanation on how to run the GO script for extracting the links, find the redlinks, and resolve redirects through time.
 
 
 ## Quick run of the pipeline
