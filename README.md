@@ -8,7 +8,7 @@ Abstract goes here.
 
 
 ## Github repository structure
-The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a read me file which gives the details about every step.
+The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a read me file which gives the details about that step.
 
 * 1_downloading_wiki_dump
 * 2_extracting_templates
