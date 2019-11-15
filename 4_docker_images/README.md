@@ -20,13 +20,13 @@ After the first step, everything is ready for the final Docker image to be built
 - `WebRequest.php` - this file is from MediaWiki, with just one line edited to enable to isolate the parser and run it from the command line
 - `Parser.php` - this file is from MediaWiki, with one line edited to enable for following 3 redirects when parsing templates
 - `Database.php` - this file is from MediaWiki, with `selectRow` function edited in order to intercept the calls when retrieving template and module pages
-- `generate_Local_Settings.py` - this script is for generating `Local_Settings.php` file, it is used to specify which one of the 60 MediaWiki MySQL databases to be used
+- `generate_Local_Settings.py` - this script is for generating `Local_Settings.php` file, it is used to specify which one of the 60 MediaWiki MySQL backend databases to be used
 - `Templates_modules_database_calls.php` - here is defined the logic for retrieving the templates and modules (detailed information in the report)
 - `main_parsing_process.php` and `child_parsing_process.php` - these scripts read an XML file, call the parser function on every page in the XML file and save the HTML output, the main script is responsible for reading the XML file, extracting the Wikitext for the pages, and sending it to the child script, which invokes the MediaWiki parser and returns the HTML to the main script to finally save the HTML and the metadata of the page. This is done in order the main script to be able to detect failures, because whenever a parsing of a page fails, MediaWiki parser invokes a kill function, and the child script is killed, which is then detected by the main script, logged and then the parsing of the other pages is resumed.
 
 (The edited parts of original MediaWiki scripts are marked with the comment line `This is the edited part!`)
 
-The entry point is the `main_parsing_process.php` script. The script takes three arguments: the input XML file, the directory where to save the results, and the number of the backend MySQL database to use.
+The entry point is the `main_parsing_process.php` script. The script takes three arguments: the input XML file, the directory where to save the results, and the number of the backend MySQL database to be used.
 
 The image can be built with the following command:
 ```
