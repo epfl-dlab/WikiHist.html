@@ -36,9 +36,12 @@ The downloading scripts have the following dependency:
 5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
 6. The data will be saved in `downloaded_data` directory.
 
+### Downloading the metadata
+Here script to download the redirects and red links resolution metadata.
+
 
 ## Example use case: extracting links
-Here goes a short explanation on how to run the GO script for extracting the links.
+Here goes a short explanation on how to run the GO script for extracting the links, find the redlinks, and resolve redirects thoguh time.
 
 
 ## Quick run of the pipeline
