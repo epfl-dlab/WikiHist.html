@@ -1,18 +1,17 @@
-"""With this script users can download the final HTML dataset in bulk, by providing the page ids or page titles in a text file.
+"""With this script users can download the final HTML dataset.
 
-This is a  script for downloading chunks of the HTML dataset in bulk which
-is hosted on Internet Archive. The data can be downloaded by providing the
-title or the page id of the pages an user wants to download in a text file,
-every title or page id in a new line, then the path to the text file is given
-to the script. The script needs meta-data files in order to work, if the
-meta-data is missing, the script will ask to download it automatically from
-Internet Archive. Also, the script is interactive (when run checks if the
-meta-data is present, asks the user for configurations, etc.) and doesn't
-need any additional setup or arguments.
+This is an interactive script for downloading chunks of the HTML dataset
+which is hosted on Internet Archive. The data can be searched and downloaded
+by providing the title or the page id of the pages an user wants to download.
+The script needs meta-data files in order to work, if the meta-data is missing,
+the script will ask to download it automatically from Internet Archive. Also,
+the script is interactive (when run checks if the meta-data is present, asks
+the user for configurations, etc.) and doesn't need any additional setup or
+arguments.
 
 Example
 -------
-python download_script.py
+python download_data.py
 
 """
 
@@ -45,7 +44,7 @@ FILES = [x + "_html_dlab" for x in FILES]
 
 with open('metadata/title_to_page_id.pickle', 'rb') as handle:
     TITLE_TO_PAGE_ID = pickle.load(handle)
-    
+
 
 def lookup_by_page_id(page_id):
     if page_id not in LOOKUP_DICT.keys():
@@ -64,7 +63,6 @@ def lookup_by_page_id(page_id):
             else:
                 result.append(FILES[file_count] + "/" + str(i*1000) + ".json.gz")
         return result
-
 
     else:
         result = []
@@ -91,22 +89,6 @@ if mode != "page_title" and mode != "page_id":
 
 if mode == "page_title":
     print("Note: The words in the titles are separated by single space and not the '_' character")
-    
-search_terms_file = input("Enter the path to the file containing the search terms:\n")
-
-if not os.path.isfile(search_terms_file):
-    print("Please enter a valid path!")
-    exit(1)
-
-
-search_terms = []
-with open(search_terms_file) as f:
-    for line in f:
-        if mode == "page_title":
-            search_terms.append(line.strip())
-        else:
-            search_terms.append(int(line))
-
 
 already_downloaded = []
 if os.path.isdir("downloaded_data"):
@@ -114,15 +96,18 @@ if os.path.isdir("downloaded_data"):
         if os.path.isdir(os.path.join("downloaded_data", d)):
             for file in os.listdir(os.path.join("downloaded_data", d)):
                 already_downloaded.append(d + "/" + file)
+    
+search_term = input("Enter the " + mode + " to search the data or 'EXIT' to exit the script:\n")
 
-
-for search_term in search_terms:
+while search_term != "EXIT":
     result = None
 
     if mode == "page_id":
+        print("Searching by page_id...")
         result = lookup_by_page_id(int(search_term))
 
     if mode == "page_title":
+        print("Searching by page_title...")
         result = lookup_by_page_title(search_term)
     
     if result != None:
@@ -136,5 +121,9 @@ for search_term in search_terms:
         if flag == False:
             print("This download was unsuccessful! Try again!")
             exit(1)
-            
-print("The downloading is done.")
+
+    if mode == "EXIT":
+        print("The downloading is done.")
+        exit(0)
+        
+    search_term = input("Enter the " + mode + " to search the data or 'EXIT' to exit the script:\n")
