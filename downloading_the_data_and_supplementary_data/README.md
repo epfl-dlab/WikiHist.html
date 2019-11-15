@@ -38,7 +38,7 @@ The final dataset contains more than 580 million of revision pages from more tha
     │   └── 1100000.json.gz
     └── ...
 
-Each of the JSON files is a newline-delimited JSON file which stores every element, in our case each HTML article revision with its metadata, as a new line. The format of the JSON lines is the followoing:
+Each of the JSON files is a newline-delimited JSON file which stores every element, in our case each HTML article revision with its metadata, as a new line. The format of the JSON lines is the following:
 
 ```
 {
@@ -77,7 +77,7 @@ Each of the JSON files is a newline-delimited JSON file which stores every eleme
 # Supplementary data format
 In addition to the dataset, we provide two more supplementary datasets:
 ## Page creation timestamp
-Because of technical reasons, all the links in the HTML pages, are rendered as red links. In order to be able to resolve which like was red or blue at the time of the creation of the revision, we provide a JSON file containing the information when a given page was created. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the followoing:
+Because of technical reasons, all the links in the HTML pages, are rendered as red links. In order to be able to resolve which like was red or blue at the time of the creation of the revision, we provide a JSON file containing the information when a given page was created. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the following:
 ```
 {
     "page_id":"x",
@@ -92,7 +92,7 @@ Because of technical reasons, all the links in the HTML pages, are rendered as r
 This information is extracted from the first revision of every page in the full history dump. It is important to note that this the best approximation we can get to resolve if a link was red or blue. This is because for example if some page was present in 2010, then the links in other pages that linked to it were blue links, but if this page was later deleted from Wikipedia, then the page will be missing in this JSON, because the page is also missing in the full history dump.
 
 ## Resolving redirects through time
-Also, as a supplementary dataset, we provide a JSON file containing all the redirects in the full dump history, and how they changed over time. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the followoing:
+Also, as a supplementary dataset, we provide a JSON file containing all the redirects in the full dump history, and how they changed over time. The JSON files is a newline-delimited JSON file and the format of the JSON lines is the following:
 ```
 {
     "title":"x"
