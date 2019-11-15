@@ -5,6 +5,10 @@ The resulting dataset, along with Wikipedia's full history dump that we processe
 * `bulk_download_data.py` - this script is used to download pages in bulk, by specifying the page titles, or page ids in a file instead of typing them manually.
 * `download_supplementary_data.py` - this script is used for downloading the supplementary datasets from IA.
 
+### Dependencies
+The downloading scripts have the following dependency:
+* Internet Archive Command-Line Interface, [installation guide]( https://archive.org/services/docs/api/internetarchive/installation.html)
+
 
 # Data format
 The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
