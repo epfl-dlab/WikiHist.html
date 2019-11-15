@@ -7,7 +7,7 @@ can be used to resolve the redirects and study how the redirects changed through
 
 Example
 -------
-python downloading_metadata.py
+python download_supplementary_data.py
 
 """
 
