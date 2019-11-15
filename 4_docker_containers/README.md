@@ -26,7 +26,7 @@ After the first step, everything is ready for the final Docker image to be built
 
 (The edited parts of original MediaWiki scripts are marked with the comment line `This is the edited part!`)
 
-The entry point is the `main_parsing_process.php` script.
+The entry point is the `main_parsing_process.php` script. The script takes three arguments: the input XML file, the directory where to save the results, and the number of the backend MySQL database to use.
 
 The image can be built with the following command:
 ```
