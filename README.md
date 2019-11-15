@@ -36,6 +36,14 @@ The downloading scripts have the following dependency:
 5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
 6. The data will be saved in `downloaded_data` directory.
 
+### Downloading the supplementary datasets
+In addition to the main dataset, we provide two more supplementary datasets:
+1. Page creation timestamp - which can be used for resolving the red links in the pages.
+2. Resolving redirects through time - which can be used to resolve the redirect links.
+For more information about these datasets, please refer [here](https://github.com/epfl-dlab/enwiki_history_to_html/tree/master/downloading_the_data_and_supplementary_data#supplementary-data-format).
+
+To download the supplementary dataset just run the `download_supplementary_data` from the `downloading_the_data_and_supplementary_data` directory:
+`python download_supplementary_data.py`
 
 ## Example use case: extracting links
 Here goes a short explanation on how to run the GO script for extracting the links, find the redlinks, and resolve redirects through time.
