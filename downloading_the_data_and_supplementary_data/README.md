@@ -82,11 +82,13 @@ Because of technical reasons, all the links in the HTML pages, are rendered as r
 {
     "page_id":"x",
     "title":"x",
+    "ns":"x",
     "timestamp":"x",
 }
 ```
 * page\_id - This is the id of the page.
 * title - This is the title of the page.
+* ns - This is the namespace of the page.
 * timestamp - This is the timestamp when the page was first created.
 
 This information is extracted from the first revision of every page in the full history dump. It is important to note that this the best approximation we can get to resolve if a link was red or blue. This is because for example if some page was present in 2010, then the links in other pages that linked to it were blue links, but if this page was later deleted from Wikipedia, then the page will be missing in this JSON, because the page is also missing in the full history dump.
