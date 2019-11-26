@@ -15,7 +15,7 @@ import os
 from internetarchive import download
 import pickle
 
-if ! os.path.isdir("metadata"):
+if not os.path.isdir("metadata"):
     os.mkdir("metadata")
 
 if not os.path.isfile("metadata/page_creation_timestamp.json.gz") or not os.path.isfile("metadata/redirects_thorugh_history.json.gz"):
