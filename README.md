@@ -24,6 +24,62 @@ The number in the directory name indicates the step number of the project.
 ## Downloading the dataset
 The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downloading_the_data_and_supplementary_data` directory. Here we describe how the `bulk_download_data.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
 
+### Data format
+The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
+
+    .
+    ├── enwiki-20190301-pages-meta-history1.xml-p10p2062/
+    │   ├── 1000.json.gz
+    │   ├── 2000.json.gz
+    │   ├── 3000.json.gz
+    │   ├── ...
+    │   └── 1100000.json.gz
+    ├── ...
+    ├── ...
+    ├── enwiki-20190301-pages-meta-history27.xml-pxxxpxxx/
+    │   ├── 1000.json.gz
+    │   ├── 2000.json.gz
+    │   ├── 3000.json.gz
+    │   ├── ...
+    │   └── 1100000.json.gz
+    └── ...
+
+Each of the JSON files is a newline-delimited JSON file which stores every element, in our case each HTML article revision with its metadata, as a new line. The format of the JSON lines is the following:
+
+```
+{
+    "parentid":"x",
+    "id":"x",
+    "timestamp":"x",
+    "cont_username":"x",
+    "cont_ip":"x",
+    "cont_id":"x",
+    "comment":"x",
+    "model":"x",
+    "format":"x",
+    "sha1":"x",
+    "title":"x",
+    "ns":0,
+    "page_id":"x",
+    "redirect_title":"x",
+    "html":"x"
+}
+```
+* parentid - This is the id of the parent revision of this revision.
+* id - This is the id of this revisions.
+* timestamp - This is the timestamp when the revision was created.
+* cont\_username - this is the username of the contributor who created this revisions.
+* cont\_ip - This is the ip address of the contributor who created this revision.
+* comment - This is the comment left by the user  who created this revision.
+* model - The model of this revision.
+* format - The format of this revision.
+* sha1 - The sha1 of this revision.
+* title - This is the title of this revision.
+* ns - This is the namespace of this revision and is always 0, because only the main pages/articles are processed.
+* page\_id - This is the id of the page of this revision.
+* redirect\_title - If the page of this revision is redirect, this is the title where it redirects to.
+* html - The revision in HTML format.
+
 ### Dependencies
 The downloading scripts have the following dependency:
 * Internet Archive Command-Line Interface, [installation guide]( https://archive.org/services/docs/api/internetarchive/installation.html)
