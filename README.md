@@ -102,10 +102,6 @@ To download the supplementary dataset just run the following script from the `do
 
 `python download_supplementary_data.py`
 
-## Example use case: extracting links
-Here goes a short explanation on how to run the GO script for extracting the links, find the redlinks, and resolve redirects through time.
-
-
 ## Quick run of the pipeline
 The steps from 1 to 7 explain all the details of the process, from downloading the dump files, to uploading the data on Internet Archive, and it is useful for recreating the whole process.
 Here, we show how to use the `quick_run.sh` script which automatically sets up and downloads everything that is needed to run the whole process on a sample XML file containing pages in Wikitext to obtain the pages in HTML format. Note that the script needs 101 GB of free hard drive space, because it downloads the MySQL database which is 11 GB compressed, then decompresses it to a 100 GB.
