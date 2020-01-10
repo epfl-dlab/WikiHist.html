@@ -1,4 +1,4 @@
-# Bulk-parse Wikipedia’s entire history from Wiki markup to HTML
+# WikiHist.html: English Wikipedia's Full Revision History Parsed to HTML
 
 This is a repo containing all code and steps taken to download, setup the process and convert the whole English Wikipedia history from Wikitext to HTML format.
 
