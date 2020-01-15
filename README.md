@@ -4,7 +4,28 @@ This is a repo containing all code and steps taken to download, setup the proces
 
 
 ## Abstract
-Wikipedia is written in the wikitext markup language. When serving content, the MediaWiki software that powers Wikipedia parses wikitext to HTML, thereby inserting additional content by expanding macros (templates and modules). Hence, researchers who intend to analyze Wikipedia as seen by its readers should work with HTML, rather than wikitext. Since Wikipedia’s revision history is publicly available exclusively in wikitext format, researchers have had to produce HTML themselves, typically by using Wikipedia’s REST API for ad-hoc wikitext-to-HTML parsing. This approach, however, (1) does not scale to very large amounts of data and (2) does not correctly expand macros in historical article revisions. We solve these problems by developing a parallelized architecture for parsing massive amounts of wikitext using local instances of MediaWiki, enhanced with the capacity of correct historical macro expansion. By deploying our system, we produce and release WikiHist.html, English Wikipedia’s full revision history in HTML format. We highlight the advantages of WikiHist.html over raw wikitext in an empirical analysis of Wikipedia’s hyperlinks, showing that over half of the wiki links present in HTML are missing from raw wikitext, and that the missing links are important for user navigation. Data and code are publicly available at https://doi.org/10.5281/zenodo.3605388.
+> Wikipedia is written in the wikitext markup language. When serving content, the MediaWiki software that powers Wikipedia parses wikitext to HTML, thereby inserting additional content by expanding macros (templates and modules). Hence, researchers who intend to analyze Wikipedia as seen by its readers should work with HTML, rather than wikitext. Since Wikipedia’s revision history is publicly available exclusively in wikitext format, researchers have had to produce HTML themselves, typically by using Wikipedia’s REST API for ad-hoc wikitext-to-HTML parsing. 
+> This approach, however, (1) does not scale to very large amounts of data and (2) does not correctly expand macros in historical article revisions. We solve these problems by developing a parallelized architecture for parsing massive amounts of wikitext using local instances of MediaWiki, enhanced with the capacity of correct historical macro expansion. By deploying our system, we produce and release WikiHist.html, English Wikipedia’s full revision history in HTML format. 
+> We highlight the advantages of WikiHist.html over raw wikitext in an empirical analysis of Wikipedia’s hyperlinks, showing that over half of the wiki links present in HTML are missing from raw wikitext, and that the missing links are important for user navigation. Data and code are publicly available at https://doi.org/10.5281/zenodo.3605388.
+
+## Quick start - Data download
+
+The easier way to download the dataset is to use our custom download-manager in Python. Follow these steps to start:
+
+#### Step 1: Install dependencies
+
+Install the _internetarchive_ dependency with `pip install internetarchive`
+
+#### Step 2: Download the metadata and the script?
+
+Links?
+
+#### Step 2: Run the script
+
+?
+
+
+
 
 ## Github repository structure
 The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a readme file which gives the details about that step.
@@ -21,7 +42,7 @@ The number in the directory name indicates the step number of the project.
 
 
 ## Downloading the dataset
-The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the read.me file and scripts in the `downloading_the_data_and_supplementary_data` directory. Here we describe how the `bulk_download_data.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
+The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the `read.me` file and scripts in the `downloading_the_data_and_supplementary_data` directory. Here we describe how the `bulk_download_data.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
 
 ### Data format
 The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
@@ -119,3 +140,7 @@ When the processing is done:
 - there will be a directory `data/results/sample.xml/_SUCCESS` indicating the successful finish of the processing 
 - inside the `data/results` directory, there will be a file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
 - there will be a directory `data/results/sample.xml` containing the resulting json files
+
+
+## License
+Attribution 3.0 Unported (CC BY 3.0)
