@@ -16,19 +16,19 @@ The easier way to download the dataset is to use our custom download-manager in 
 
 #### Step 1: Install dependencies
 
-Install the _internetarchive_ dependency with `pip install internetarchive`
-Install the _wget_ dependency with `pip install wget`
+* Install the _internetarchive_ dependency with `pip install internetarchive`
+* Install the _wget_ dependency with `pip install wget`
 
 #### Step 2: Download the metadata and the script
 The scripts can be found in the `downloading_scripts` directory.
-The metadata is hosted on Zenodo https://zenodo.org/record/3605388#.Xh9bEHVKi0k, but the scripts automatically download the needed metadata.
+The metadata is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k), but the scripts automatically download the needed metadata.
 
 #### Step 3.1: Run the script to download the whole dataset
 This script downloads the whole dataset from IA, and its dependencies is `file_names.txt` which is in the same folder on github.
 `python download_whole_dataset.py`
 
 #### Step 3.2: Run the script to download subset of the dataset
-This script downloads an subset of the dataset from IA, and its dependencies are the metadata found on Zenodo. The script automatically downloads the metadata first, then it is an interactive script, it guides the user through the process and depnding on the action of the user it asks for different inputs.
+This script downloads a subset of the dataset from IA, and its dependencies are the metadata found on Zenodo. The script automatically downloads the metadata first, then it is an interactive script, it guides the user through the process and depending on the action of the user it asks for different inputs.
 `python download_subset.py`
 
 More detailed steps:
@@ -46,7 +46,7 @@ In addition to the main dataset, we provide two more supplementary datasets:
 2. `redirect_history.json.gz` - which can be used to resolve the redirect links.
 For more information about these datasets, please refer [here](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts).
 
-The supplementary datasets can be downloaded from [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k
+The supplementary datasets can be downloaded from [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
 
 
 ## Github repository structure
