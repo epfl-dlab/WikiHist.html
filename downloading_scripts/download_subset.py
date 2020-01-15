@@ -19,6 +19,8 @@ python bulk_download_data.py
 import os
 from internetarchive import download
 import pickle
+import wget
+import zipfile
 
 if not os.path.isfile("metadata/lookup_data.pickle") or not os.path.isfile("metadata/title_to_page_id.pickle"):
     print("The metadata files are missing...")
@@ -26,12 +28,9 @@ if not os.path.isfile("metadata/lookup_data.pickle") or not os.path.isfile("meta
     
     if answer.lower() == "yes":
         print("Downloading the metadata, please wait...")
-        if not os.path.exists("metadata"):
-            os.mkdir("metadata")
-        flag = download('enwiki-20190301-scripts-and-metadata_dlab', verbose=True, files=['metadata/lookup_data.pickle', 'metadata/title_to_page_id.pickle'], no_directory=True)
-        if flag == False:
-            print("Error occurred while downloading the metadata! Please rerun the script.")
-            exit(1)
+        wget.download("https://zenodo.org/record/3605388/files/metadata.zip?download=1")
+        with zipfile.ZipFile("metadata.zip", 'r') as zip_ref:
+            zip_ref.extractall()
     else:
         print("This script can't work without the metadata, please download the metadata.")
         exit(1)
