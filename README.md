@@ -10,21 +10,43 @@ This is a repo containing all code and steps taken to download, setup the proces
 
 ## Quick start - Data download
 
+The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 559 Internet Archive items are part of the dataset we are providing.
+
 The easier way to download the dataset is to use our custom download-manager in Python. Follow these steps to start:
 
 #### Step 1: Install dependencies
 
 Install the _internetarchive_ dependency with `pip install internetarchive`
+Install the _wget_ dependency with `pip install wget`
 
-#### Step 2: Download the metadata and the script?
+#### Step 2: Download the metadata and the script
+The scripts can be found in the `downloading_scripts` directory.
+The metadata is hosted on Zenodo https://zenodo.org/record/3605388#.Xh9bEHVKi0k, but the scripts automatically download the needed metadata.
 
-Links?
+#### Step 3.1: Run the script to download the whole dataset
+This script downloads the whole dataset from IA, and its dependencies is `file_names.txt` which is in the same folder on github.
+`python download_whole_dataset.py`
 
-#### Step 2: Run the script
+#### Step 3.2: Run the script to download subset of the dataset
+This script downloads an subset of the dataset from IA, and its dependencies are the metadata found on Zenodo. The script automatically downloads the metadata first, then it is an interactive script, it guides the user through the process and depnding on the action of the user it asks for different inputs.
+`python download_subset.py`
 
-?
+More detailed steps:
+1. Download the `bulk_download_data.py` script and the `titles_to_download.txt` example file.
+2. Run the script with the command `python bulk_download_data.py`.
+3. If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
+4. When asked about the search mode type `page_title` to search for the pages by title.
+5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
+6. The data will be saved in `downloaded_data` directory.
 
 
+### Downloading the supplementary datasets
+In addition to the main dataset, we provide two more supplementary datasets:
+1. `page_creation_times.json.gz` - which can be used for resolving the red links in the pages.
+2. `redirect_history.json.gz` - which can be used to resolve the redirect links.
+For more information about these datasets, please refer [here](https://github.com/epfl-dlab/enwiki_history_to_html/tree/master/downloading_the_data_and_supplementary_data#supplementary-data-format).
+
+The supplementary datasets can be downloaded from [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k
 
 
 ## Github repository structure
@@ -39,10 +61,6 @@ The scripts are divided into directories, and every directory is a step in the p
 * 7_uploading_to_IA
 
 The number in the directory name indicates the step number of the project.
-
-
-## Downloading the dataset
-The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. To easily download the data from Internet Archive we provided python scripts. For more information about the scripts, check the `read.me` file and scripts in the `downloading_the_data_and_supplementary_data` directory. Here we describe how the `bulk_download_data.py` can be used to download the revision history of multiple pages in HTML format from the dataset based on their title.
 
 ### Data format
 The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
@@ -100,27 +118,6 @@ Each of the JSON files is a newline-delimited JSON file which stores every eleme
 * redirect\_title - If the page of this revision is redirect, this is the title where it redirects to.
 * html - The revision in HTML format.
 
-### Dependencies
-The downloading scripts have the following dependency:
-* Internet Archive Command-Line Interface, [installation guide]( https://archive.org/services/docs/api/internetarchive/installation.html)
-
-### Running the `bulk_download_data.py`
-1. Download the `bulk_download_data.py` script and the `titles_to_download.txt` example file.
-2. Run the script with the command `python bulk_download_data.py`.
-3. If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
-4. When asked about the search mode type `page_title` to search for the pages by title.
-5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
-6. The data will be saved in `downloaded_data` directory.
-
-### Downloading the supplementary datasets
-In addition to the main dataset, we provide two more supplementary datasets:
-1. `page_creation_timestamp.json.gz` - which can be used for resolving the red links in the pages.
-2. `redirects_thorugh_history.json.gz` - which can be used to resolve the redirect links.
-For more information about these datasets, please refer [here](https://github.com/epfl-dlab/enwiki_history_to_html/tree/master/downloading_the_data_and_supplementary_data#supplementary-data-format).
-
-To download the supplementary dataset just run the following script from the `downloading_the_data_and_supplementary_data` directory:
-
-`python download_supplementary_data.py`
 
 ## Quick run of the pipeline
 The steps from 1 to 7 explain all the details of the process, from downloading the dump files, to uploading the data on Internet Archive, and it is useful for recreating the whole process.
