@@ -119,7 +119,3 @@ When the processing is done:
 - there will be a directory `data/results/sample.xml/_SUCCESS` indicating the successful finish of the processing 
 - inside the `data/results` directory, there will be a file named `log.txt` with the following content - `The job for file SUCCEEDED: sample.xml`
 - there will be a directory `data/results/sample.xml` containing the resulting json files
-
-
-## License
-License goes here.
