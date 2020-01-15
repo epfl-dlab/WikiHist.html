@@ -4,11 +4,8 @@
 if [ ! -d "mysql_database" ]
 then
     echo "Downloading and uncompressing the mysql database..."
-    ia download --no-directories enwiki-20190301-scripts-and-metadata_dlab mysql_database/my.cnf
-    ia download --no-directories enwiki-20190301-scripts-and-metadata_dlab mysql_database/mysql_datadir_20190301.tar.gz
-    cd mysql_database
-    pigz -dc mysql_datadir_20190301.tar.gz | tar xf -
-    cd ..
+    wget https://zenodo.org/record/3605388/files/mysql_database.zip
+    unzip mysql_database.zip
 fi
 
 
@@ -33,7 +30,7 @@ then
 fi
 cd data
 # Downloading the sample data
-ia download --no-directories enwiki-20190301-scripts-and-metadata_dlab sample.xml
+wget https://zenodo.org/record/3605388/files/sample.xml
 
 if [ ! -d "results" ]
 then
