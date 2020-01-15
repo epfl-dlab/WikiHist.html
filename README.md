@@ -10,7 +10,7 @@ This is a repo containing all code and steps taken to download, setup the proces
 
 ## Quick start - Data download
 
-The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 559 Internet Archive items are part of the dataset we are providing.
+The resulting dataset, along with Wikipedia's full history dump that we processed is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 559 Internet Archive items are part of the HTML dataset.
 
 The easier way to download the dataset is to use our custom download-manager in Python. Follow these steps to start:
 
@@ -23,8 +23,8 @@ The easier way to download the dataset is to use our custom download-manager in 
 The scripts can be found in the `downloading_scripts` directory.
 The metadata is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k), but the scripts automatically download the needed metadata.
 
-#### Step 3.1: Run the script to download the whole dataset
-This script downloads the whole dataset from IA, and its dependencies is `file_names.txt` which is in the same folder on github.
+#### Step 3.1: Run the script to download the whole dataset (~7 TB)
+This script downloads the whole dataset from IA, and its dependencies `file_names.txt`.
 `python download_whole_dataset.py`
 
 #### Step 3.2: Run the script to download subset of the dataset
