@@ -4,8 +4,7 @@ This is a repo containing all code and steps taken to download, setup the proces
 
 
 ## Abstract
-Abstract goes here.
-
+Wikipedia is written in the wikitext markup language. When serving content, the MediaWiki software that powers Wikipedia parses wikitext to HTML, thereby inserting additional content by expanding macros (templates and modules). Hence, researchers who intend to analyze Wikipedia as seen by its readers should work with HTML, rather than wikitext. Since Wikipedia’s revision history is publicly available exclusively in wikitext format, researchers have had to produce HTML themselves, typically by using Wikipedia’s REST API for ad-hoc wikitext-to-HTML parsing. This approach, however, (1) does not scale to very large amounts of data and (2) does not correctly expand macros in historical article revisions. We solve these problems by developing a parallelized architecture for parsing massive amounts of wikitext using local instances of MediaWiki, enhanced with the capacity of correct historical macro expansion. By deploying our system, we produce and release WikiHist.html, English Wikipedia’s full revision history in HTML format. We highlight the advantages of WikiHist.html over raw wikitext in an empirical analysis of Wikipedia’s hyperlinks, showing that over half of the wiki links present in HTML are missing from raw wikitext, and that the missing links are important for user navigation. Data and code are publicly available at https://doi.org/10.5281/zenodo.3605388.
 
 ## Github repository structure
 The scripts are divided into directories, and every directory is a step in the process of converting the Wikitext to HTML, starting from downloading the files, extracting the templates etc… In every step directory, there is a readme file which gives the details about that step.
