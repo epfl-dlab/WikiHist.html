@@ -1,7 +1,7 @@
 # Downloading the data
 The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 559 Internet Archive items are part of the dataset we are providing. This directory contains scripts for downloading the dataset locally.
 
-* `download_subset.py` - this interactive script is used to download pages in bulk, by specifying the page titles, or page ids in a config file, in order to work it needs a metadata files which are also automatically fetched from Zenodo.
+* `download_subset.py` - this interactive script is used to download pages in bulk, by specifying the page titles, or page ids in a config file. In order to work it needs a metadata files which are automatically fetched from Zenodo.
 * `download_whole_dataset.py` - this script is used for downloading the whole dataset from IA which is around **7TB**.
 
 #### Step 1: Install dependencies
@@ -10,7 +10,7 @@ The resulting dataset, along with Wikipedia's full history dump that we processe
 * Install the _wget_ dependency with `pip install wget`
 
 #### Step 2: Download the metadata and the script
-The scripts can be found in the [`downloading_scripts`](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts) directory. The scripts automatically download the needed metadata, which is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
+The scripts can be found in the this directory. Additionally, the scripts automatically download the needed metadata, which is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
 
 #### Step 3.1: Run the script to download the whole dataset (~7 TB)
 This script downloads the whole dataset from IA:
