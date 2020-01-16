@@ -1,17 +1,27 @@
 # Downloading the data
-The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 560 Internet Archive items are part of the dataset we are providing. This directory contains scripts for downloading the dataset and metadata from the dataset locally.
+The resulting dataset, along with Wikipedia's full history dump that we processed at the moment is hosted on Internet Archive inside the `enwiki_history_html` collection accessible [here](https://archive.org/details/enwiki_history_html). All the 559 Internet Archive items are part of the dataset we are providing. This directory contains scripts for downloading the dataset locally.
 
-* `download_data.py` - this is an interactive script for downloading the data from Internet Archive, in order to work it needs a metadata files which are also automatically fetched from IA by the script.
-* `bulk_download_data.py` - this script is used to download pages in bulk, by specifying the page titles, or page ids in a file instead of typing them manually.
-* `download_supplementary_data.py` - this script is used for downloading the supplementary datasets from IA.
+* `download_subset.py` - this interactive script is used to download pages in bulk, by specifying the page titles, or page ids in a config file, in order to work it needs a metadata files which are also automatically fetched from Zenodo.
+* `download_whole_dataset.py` - this script is used for downloading the whole dataset from IA which is around **7TB**.
 
-### Dependencies
-The downloading scripts have the following dependency:
-* Internet Archive Command-Line Interface, [installation guide]( https://archive.org/services/docs/api/internetarchive/installation.html)
+#### Step 1: Install dependencies
 
-### Running the `bulk_download_data.py`
-1. Download the `bulk_download_data.py` script and the `titles_to_download.txt` example file.
-2. Run the script with the command `python bulk_download_data.py`.
+* Install the _internetarchive_ dependency with `pip install internetarchive`
+* Install the _wget_ dependency with `pip install wget`
+
+#### Step 2: Download the metadata and the script
+The scripts can be found in the [`downloading_scripts`](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts) directory. The scripts automatically download the needed metadata, which is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
+
+#### Step 3.1: Run the script to download the whole dataset (~7 TB)
+This script downloads the whole dataset from IA:
+```
+python download_whole_dataset.py
+```
+
+#### Step 3.2: Run the script to download subset of the dataset
+This script downloads a subset of the dataset from IA, and its dependency is the metadata found on Zenodo. The script automatically downloads the metadata first, it is an interactive script and it guides the user through the process and depending on the action of the user it asks for different inputs, for example:
+1. Download the `download_subset.py` script and the `titles_to_download.txt` example file.
+2. Run the script with the command `python download_subset.py`.
 3. If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
 4. When asked about the search mode type `page_title` to search for the pages by title.
 5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
