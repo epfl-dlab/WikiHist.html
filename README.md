@@ -20,20 +20,18 @@ The easier way to download the dataset is to use our custom download-manager in 
 * Install the _wget_ dependency with `pip install wget`
 
 #### Step 2: Download the metadata and the script
-The scripts can be found in the `downloading_scripts` directory.
-The metadata is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k), but the scripts automatically download the needed metadata.
+The scripts can be found in the [`downloading_scripts`](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts) directory. The scripts automatically download the needed metadata, which is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
 
 #### Step 3.1: Run the script to download the whole dataset (~7 TB)
-This script downloads the whole dataset from IA, and its dependencies `file_names.txt`.
-`python download_whole_dataset.py`
+This script downloads the whole dataset from IA:
+```
+python download_whole_dataset.py
+```
 
 #### Step 3.2: Run the script to download subset of the dataset
-This script downloads a subset of the dataset from IA, and its dependencies are the metadata found on Zenodo. The script automatically downloads the metadata first, then it is an interactive script, it guides the user through the process and depending on the action of the user it asks for different inputs.
-`python download_subset.py`
-
-More detailed steps:
-1. Download the `bulk_download_data.py` script and the `titles_to_download.txt` example file.
-2. Run the script with the command `python bulk_download_data.py`.
+This script downloads a subset of the dataset from IA, and its dependency is the metadata found on Zenodo. The script automatically downloads the metadata first, it is an interactive script and it guides the user through the process and depending on the action of the user it asks for different inputs, for example:
+1. Download the `download_subset.py` script and the `titles_to_download.txt` example file.
+2. Run the script with the command `python download_subset.py`.
 3. If the metadata is not downloaded, you will be asked if the script should download it, type `Yes`.
 4. When asked about the search mode type `page_title` to search for the pages by title.
 5. Give the path to the file containing the search terms `titles_to_download.txt` when the script asks for it.
@@ -47,6 +45,9 @@ In addition to the main dataset, we provide two more supplementary datasets:
 For more information about these datasets, please refer [here](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts).
 
 The supplementary datasets can be downloaded from [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
+
+### Data format
+For the data formats please refer to the README in the [downloading_scripts](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts) directory. 
 
 
 ## Github repository structure
@@ -62,64 +63,8 @@ The scripts are divided into directories, and every directory is a step in the p
 
 The number in the directory name indicates the step number of the project.
 
-### Data format
-The final dataset contains more than 580 million of revision pages from more than 5 800 000 articles. Since the full history dump from Wikipedia is divided in 558 XML files and the processing is done for every file, the results are saved into 558 Internet Archive items which can be viewed as directories, every IA item (directory) named as the input XML file. In these IA items (directories), the HTML pages are stored in JSON files, and every JSON file contains 1000 pages. The IA item (directory) tree structure looks like this:
 
-    .
-    ├── enwiki-20190301-pages-meta-history1.xml-p10p2062/
-    │   ├── 1000.json.gz
-    │   ├── 2000.json.gz
-    │   ├── 3000.json.gz
-    │   ├── ...
-    │   └── 1100000.json.gz
-    ├── ...
-    ├── ...
-    ├── enwiki-20190301-pages-meta-history27.xml-pxxxpxxx/
-    │   ├── 1000.json.gz
-    │   ├── 2000.json.gz
-    │   ├── 3000.json.gz
-    │   ├── ...
-    │   └── 1100000.json.gz
-    └── ...
-
-Each of the JSON files is a newline-delimited JSON file which stores every element, in our case each HTML article revision with its metadata, as a new line. The format of the JSON lines is the following:
-
-```
-{
-    "parentid":"x",
-    "id":"x",
-    "timestamp":"x",
-    "cont_username":"x",
-    "cont_ip":"x",
-    "cont_id":"x",
-    "comment":"x",
-    "model":"x",
-    "format":"x",
-    "sha1":"x",
-    "title":"x",
-    "ns":0,
-    "page_id":"x",
-    "redirect_title":"x",
-    "html":"x"
-}
-```
-* parentid - This is the id of the parent revision of this revision.
-* id - This is the id of this revisions.
-* timestamp - This is the timestamp when the revision was created.
-* cont\_username - this is the username of the contributor who created this revisions.
-* cont\_ip - This is the ip address of the contributor who created this revision.
-* comment - This is the comment left by the user  who created this revision.
-* model - The model of this revision.
-* format - The format of this revision.
-* sha1 - The sha1 of this revision.
-* title - This is the title of this revision.
-* ns - This is the namespace of this revision and is always 0, because only the main pages/articles are processed.
-* page\_id - This is the id of the page of this revision.
-* redirect\_title - If the page of this revision is redirect, this is the title where it redirects to.
-* html - The revision in HTML format.
-
-
-## Quick run of the pipeline
+## Quick run of the pipeline (for reproducibility purposes)
 The steps from 1 to 7 explain all the details of the process, from downloading the dump files, to uploading the data on Internet Archive, and it is useful for recreating the whole process.
 Here, we show how to use the `quick_run.sh` script which automatically sets up and downloads everything that is needed to run the whole process on a sample XML file containing pages in Wikitext to obtain the pages in HTML format. Note that the script needs 101 GB of free hard drive space, because it downloads the MySQL database which is 11 GB compressed, then decompresses it to a 100 GB.
 
