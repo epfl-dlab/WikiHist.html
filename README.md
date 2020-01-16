@@ -20,7 +20,7 @@ The easier way to download the dataset is to use our custom download-manager in 
 * Install the _wget_ dependency with `pip install wget`
 
 #### Step 2: Download the metadata and the script
-The scripts can be found in the [`downloading_scripts`](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts) directory. The scripts automatically download the needed metadata, which is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
+The scripts can be found in the [`downloading_scripts`](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts) directory. Additionally, the scripts automatically download the needed metadata, which is hosted on [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
 
 #### Step 3.1: Run the script to download the whole dataset (~7 TB)
 This script downloads the whole dataset from IA:
