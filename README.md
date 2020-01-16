@@ -42,7 +42,7 @@ This script downloads a subset of the dataset from IA, and its dependency is the
 In addition to the main dataset, we provide two more supplementary datasets:
 1. `page_creation_times.json.gz` - which can be used for resolving the red links in the pages.
 2. `redirect_history.json.gz` - which can be used to resolve the redirect links.
-For more information about these datasets, please refer [here](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts).
+For more information about these datasets, please refer [here](https://github.com/epfl-dlab/WikiHist.html/tree/master/downloading_scripts#supplementary-data-format).
 
 The supplementary datasets can be downloaded from [Zenodo](https://zenodo.org/record/3605388#.Xh9bEHVKi0k).
 
