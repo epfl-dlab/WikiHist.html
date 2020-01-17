@@ -1,0 +1,1 @@
+The data contained in this folder is used only for running or debugging the code for producing the WikiHist.html dataset. The data in this folder is *not* part of the WikiHist.html data release. For the data release, please see the [Zenodo repository](https://doi.org/10.5281/zenodo.3605388).
