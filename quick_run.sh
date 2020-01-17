@@ -29,8 +29,6 @@ then
     mkdir data
 fi
 cd data
-# Downloading the sample data
-wget https://zenodo.org/record/3605388/files/sample.xml
 
 if [ ! -d "results" ]
 then
