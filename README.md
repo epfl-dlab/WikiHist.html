@@ -7,7 +7,7 @@ The dataset itself is not described here. For a description of the dataset, plea
 
 ## Quick start: Data download
 
-As described at [https://doi.org/10.5281/zenodo.3605388](https://doi.org/10.5281/zenodo.3605388), the HTML revision history is hosted at the [Internet Archive](https://archive.org/details/enwiki_history_html).
+As described on the [dataset website](https://doi.org/10.5281/zenodo.3605388), the HTML revision history is hosted at the [Internet Archive](https://archive.org/details/enwiki_history_html).
 To facilitate downloading the data, we provide handy Python scripts in the `downloading_scripts` directory of this repo.
 
 Using the scripts, you can download either all data or only revisions for specific Wikipedia articles.
