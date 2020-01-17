@@ -16,10 +16,10 @@ Using the scripts, you can download either all data or only revisions for specif
 #### Install dependencies
 
 The scripts require the [_internetarchive_](https://archive.org/services/docs/api/internetarchive/installation.html) and [_wget_](http://bitbucket.org/techtonik/python-wget/) packages. First you need to install those:
-
-* `pip install internetarchive`
-* `pip install wget`
-
+```
+pip install internetarchive
+pip install wget
+```
 
 #### Download the full dataset of all historical HTML revisions (7TB)
 
