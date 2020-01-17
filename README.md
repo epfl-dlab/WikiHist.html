@@ -2,7 +2,7 @@
 
 This repository contains all code related to the WikiHist.html data release.
 
-The dataset itself is not described here. For a description of the dataset, please refer to [https://doi.org/10.5281/zenodo.3605388](https://doi.org/10.5281/zenodo.3605388).
+The dataset itself is not described here. For a description of the dataset, please refer to the dataset website at [https://doi.org/10.5281/zenodo.3605388](https://doi.org/10.5281/zenodo.3605388).
 
 
 ## Quick start: Data download
