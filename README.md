@@ -27,7 +27,7 @@ To download the full dataset, go to the `downloading_scripts` directory and run
 ```
 python download_whole_dataset.py
 ```
-Caveat emptor: the dataset is 7TB large, so make sure you have enough disk space before starting the download. Given the size, downloading the data will take a while.
+_Caveat emptor:_ the dataset is 7TB large, so make sure you have enough disk space before starting the download. Given the size, downloading the data will take a while.
 
 
 #### Download historical HTML revisions for specific Wikipedia articles only
