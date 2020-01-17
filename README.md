@@ -8,14 +8,14 @@ The dataset itself is not described here. For a description of the dataset, plea
 ## Quick start: Data download
 
 As described at [https://doi.org/10.5281/zenodo.3605388](https://doi.org/10.5281/zenodo.3605388), the HTML revision history is hosted at the [Internet Archive](https://archive.org/details/enwiki_history_html).
-To facilitate downloading the data, we provide handy Python scripts in the [`downloading_scripts`](tree/master/downloading_scripts) directory of this repo.
+To facilitate downloading the data, we provide handy Python scripts in the `downloading_scripts` directory of this repo.
 
-You can either download all data or only revisions for specific Wikipedia articles.
+Using the scripts, you can download either all data or only revisions for specific Wikipedia articles.
 
 
 #### Install dependencies
 
-The scripts require the [_internetarchive_](https://archive.org/services/docs/api/internetarchive/installation.html) and [_wget_](http://bitbucket.org/techtonik/python-wget/) packages. Install them:
+The scripts require the [_internetarchive_](https://archive.org/services/docs/api/internetarchive/installation.html) and [_wget_](http://bitbucket.org/techtonik/python-wget/) packages. First you need to install those:
 
 * `pip install internetarchive`
 * `pip install wget`
@@ -23,19 +23,20 @@ The scripts require the [_internetarchive_](https://archive.org/services/docs/ap
 
 #### Download the full dataset of all historical HTML revisions (7TB)
 
-To download the full dataset, run:
+To download the full dataset, go to the `downloading_scripts` directory and run
 ```
-cd downloading_scripts
 python download_whole_dataset.py
 ```
-Caveat emptor: the dataset comprises 7TB, so make sure you have enough storage before starting the download. Given the size, downloading the data will take a while.
+Caveat emptor: the dataset is 7TB large, so make sure you have enough disk space before starting the download. Given the size, downloading the data will take a while.
 
 
 #### Download historical HTML revisions for specific Wikipedia articles only
 
-1. `cd downloading_scripts`
+If, rather than downloading the full dataset, you want to download revisions for specific Wikipedia articles only, proceed as follows:
+
+1. Go to the `downloading_scripts` directory.
 2. In the file `titles_to_download.txt`, list the titles of the articles whose HTML revision history you would like to download.
-3. `python download_subset.py`
+3. Run `python download_subset.py`.
 4. The script requires some metadata. If you don't have it yet, you will be asked if the script should download it. Type `Yes`.
 5. When asked about the search mode, type `page_title` or `page_id`. (If you choose `page_id` then `titles_to_download.txt` should contain page ids, rather than page titles.)
 6. When prompted, provide the path to `titles_to_download.txt`.
@@ -46,7 +47,7 @@ Caveat emptor: the dataset comprises 7TB, so make sure you have enough storage b
 ## Data extraction pipeline
 
 Most users will need only the above scripts for downloading the ready-made WikiHist.html dataset.
-The remainder of this README refers to the code for producing dataset from scratch.
+The remainder of this README refers to the code for producing the dataset from scratch.
 
 ### Code structure
 
@@ -73,7 +74,7 @@ The following libraries are required:
 
 ### Debugging the pipeline
 
-To run the pipeline on a small sample (mostly for debugging), type:
+To run the pipeline on a small sample (mostly for debugging), run
 ```
 bash quick_run.sh
 ```
