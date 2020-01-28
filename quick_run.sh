@@ -11,8 +11,8 @@ fi
 
 # Pulling the Docker images
 echo "Pulling the Docker images..."
-docker pull blagojce/mysql-server
-docker pull blagojce/mediawiki_final
+docker pull epfldlab/mysql-server
+docker pull epfldlab/mediawiki_final
 
 
 # Initialize and start up the mysql database
