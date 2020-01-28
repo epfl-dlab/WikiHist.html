@@ -19,7 +19,7 @@ docker pull epfldlab/mediawiki_final
 echo "Starting the MySQL Docker container..."
 docker network create my_network
 cd mysql_database
-docker run --name=mysql1 --network my_network -v $(pwd)/my.cnf:/etc/my.cnf -v $(pwd)/mysql_datadir_20190301:/var/lib/mysql -d blagojce/mysql-server
+docker run --name=mysql1 --network my_network -v $(pwd)/my.cnf:/etc/my.cnf -v $(pwd)/mysql_datadir_20190301:/var/lib/mysql -d epfldlab/mysql-server
 cd ..
 
 
@@ -42,7 +42,7 @@ cd ..
 
 
 echo "Starting the MediaWiki container..."
-docker run --name mediawiki --network my_network -v $(pwd)/data:/var/www/html/data -dit blagojce/mediawiki_final
+docker run --name mediawiki --network my_network -v $(pwd)/data:/var/www/html/data -dit epfldlab/mediawiki_final
 
 
 echo "Waiting for the containers to initialize"
