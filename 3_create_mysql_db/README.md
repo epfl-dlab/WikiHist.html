@@ -81,7 +81,7 @@ CREATE INDEX idx_1 on tmtable (title, ns, new_timestamp);
 CREATE INDEX id_ ON tmtable(id);
 ```
 
-Lastly, the MediaWiki back end databases are created. The `my_wiki_bck` database file can be downloaded from [this link](https://archive.org/download/enwiki-20190301-scripts-and-metadata_dlab/mysql_database/), and its creation is explained in the 4th step.
+Lastly, the MediaWiki back end databases are created. The `my_wiki_bck` database file can be downloaded from [this link](https://zenodo.org/record/3605388/files/mysql_database.zip?download=1), and its creation is explained in the 4th step.
 
 ```
 for value in {1..60}
