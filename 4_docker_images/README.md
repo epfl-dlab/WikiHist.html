@@ -34,8 +34,7 @@ docker build -t mediawiki_final .
 ```
 
 ## Testing the Docker image
-After building the image, the following steps explain how it can be tested with a sample from the XML dump. This test assumes that all the prevous steps have been done successfully, for test of the whole process without following all the steps please refer to the [quick run section](https://github.com/epfl-dlab/WikiHist.html#quick-run-of-the-pipeline) in the main read me and this [script](https://github.com/epfl-dlab/WikiHist.html/blob/master/quick_run.sh).
-
+After building the image, the following steps explain how it can be tested with a sample from the XML dump. This test assumes that all the previous steps have been done successfully. For testing the whole process without following all the steps please refer to this [script](https://github.com/epfl-dlab/WikiHist.html/blob/master/quick_run.sh).
 
 
 1. Download an XML sample file from [here](https://ia601000.us.archive.org/0/items/enwiki-20190301-scripts-and-metadata_dlab/sample.xml) and store the file in a directory called `data`, also inside the `data` directory create:
