@@ -11,10 +11,36 @@ The dataset itself is not described here. For a description of the dataset, plea
 ## Quick start: Data download
 
 As described on the [dataset website](https://doi.org/10.5281/zenodo.3605388), the HTML revision history is hosted at the [Internet Archive](https://archive.org/details/WikiHist_html).
-To facilitate downloading the data, we provide handy Python scripts in the `downloading_scripts` directory of this repo.
+To facilitate downloading the data, we provide two alternative ways to get the data:
 
-Using the scripts, you can download either all data or only revisions for specific Wikipedia articles.
+1. a torrent-based solution (recommended)
+2. a Python scripts in the `downloading_scripts` directory of this repo.
+**Note:** Using the scripts, you can download either all data or only revisions for specific Wikipedia articles.
 
+### Option 1: Torrent-based solution
+
+Pros: _fast, automatic retry and restore_
+Cons: _intented only for full download_
+
+This method is the recommended way to download the whole dataset. If you are interested in a partial download (i.e., only some articles), please consider Option 2.
+This solution requires the command-line utility Aria2 available at https://aria2.github.io/
+
+Once the repository is cloned, the download requires 2 steps:
+
+1. Download the utility `aria2c` from the Github repository.
+2. Run the script `download.sh` in the folder `TorrentDownload`
+
+This script starts the download of the Torrent files listed in `files_list.txt`. The parameters in the file `download.sh` can be adapted to your connection specifics. Please refer to Aria2 documentation (`aria2c -h` and [Online Manual](http://aria2.github.io/manual/en/html/README.html)).
+
+By default, the script uses 16 parallel connections and saves the dowloaded dataset in the folder WikiHist_html.
+
+
+### Option 2: Custom script
+
+Pros: _allows "lookup" partial download_
+Cons: _slower, retry with max value_
+
+This solution allows both the full dowload and the partial download of the dataset based in the article ID(s).
 
 #### Install dependencies
 
