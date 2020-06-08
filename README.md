@@ -14,8 +14,8 @@ As described on the [dataset website](https://doi.org/10.5281/zenodo.3605388), t
 To facilitate downloading the data, we provide two alternative ways to get the data:
 
 1. a torrent-based solution (recommended :eight_spoked_asterisk:)
-2. a Python scripts in the `downloading_scripts` directory of this repo.
-**Note:** Using the scripts, you can download either all data or only revisions for specific Wikipedia articles.
+2. a Python script in the `downloading_scripts` directory of this repo.
+**Note:** Using the script, you can download either all data or only revisions for specific Wikipedia articles.
 
 ### Option 1: Torrent-based solution
 
@@ -28,8 +28,8 @@ This solution requires the command-line utility Aria2 available at https://aria2
 
 Once the repository is cloned, the download requires 2 steps:
 
-1. Download the utility `aria2c` from the Github repository.
-2. Run the script `download.sh` in the folder `TorrentDownload`
+1. Download the utility `aria2c` from its [Github repository](https://github.com/aria2/aria2/releases/).
+2. Run the script `download.sh` in the folder [`TorrentDownload`](https://github.com/epfl-dlab/WikiHist.html/tree/master/TorrentDownload)
 
 This script starts the download of the Torrent files listed in `files_list.txt`. The parameters in the file `download.sh` can be adapted to your connection specifics. Please refer to Aria2 documentation (`aria2c -h` and [Online Manual](http://aria2.github.io/manual/en/html/README.html)).
 
@@ -38,11 +38,11 @@ By default, the script uses 16 parallel connections and saves the downloaded dat
 
 ### Option 2: Custom script
 
-Pros: _allows "lookup" partial download_
+Pros: _allows partial download, e.g., to get revisions for certain articles only_
 
-Cons: _slower, retry with max value_
+Cons: _slower, maximum number of retries is upper-bounded_
 
-This solution allows both the full dowload and the partial download of the dataset based in the article ID(s).
+This solution allows both the full dowload and the partial download of the dataset based on the article ID(s).
 
 #### Install dependencies
 
