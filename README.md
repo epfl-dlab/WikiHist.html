@@ -20,6 +20,7 @@ To facilitate downloading the data, we provide two alternative ways to get the d
 ### Option 1: Torrent-based solution
 
 Pros: _fast, automatic retry and restore_
+
 Cons: _intented only for full download_
 
 This method is the recommended way to download the full dataset. If you are interested in a partial download (i.e., only some articles), please consider Option 2.
@@ -38,6 +39,7 @@ By default, the script uses 16 parallel connections and saves the downloaded dat
 ### Option 2: Custom script
 
 Pros: _allows "lookup" partial download_
+
 Cons: _slower, retry with max value_
 
 This solution allows both the full dowload and the partial download of the dataset based in the article ID(s).
