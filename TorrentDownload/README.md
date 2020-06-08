@@ -1,6 +1,6 @@
 # Torrent-based download
 
-This is the recommended way to download the full dataset. Check the [main documentation](https://github.com/epfl-dlab/WikiHist.html/blob/master/README.md) for mode details and alternative download methods.
+This is the recommended way to download the full dataset. Check the [main documentation](https://github.com/epfl-dlab/WikiHist.html/blob/master/README.md) for more details and alternative download methods.
 
 ***Important***: This script depends on Aria2. Get the binary (aria2c) for your system at: https://aria2.github.io/
 
