@@ -13,7 +13,7 @@ The dataset itself is not described here. For a description of the dataset, plea
 As described on the [dataset website](https://doi.org/10.5281/zenodo.3605388), the HTML revision history is hosted at the [Internet Archive](https://archive.org/details/WikiHist_html).
 To facilitate downloading the data, we provide two alternative ways to get the data:
 
-1. a torrent-based solution (recommended)
+1. a torrent-based solution (recommended :eight_spoked_asterisk:)
 2. a Python scripts in the `downloading_scripts` directory of this repo.
 **Note:** Using the scripts, you can download either all data or only revisions for specific Wikipedia articles.
 
@@ -21,7 +21,7 @@ To facilitate downloading the data, we provide two alternative ways to get the d
 
 Pros: _fast, automatic retry and restore_
 
-Cons: _intented only for full download_
+Cons: _intended only for full download_
 
 This method is the recommended way to download the full dataset. If you are interested in a partial download (i.e., only some articles), please consider Option 2.
 This solution requires the command-line utility Aria2 available at https://aria2.github.io/
